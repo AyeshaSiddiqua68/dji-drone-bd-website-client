@@ -1,0 +1,15 @@
+.carousel-title{
+    font-size: 50px;
+    font-weight: 700;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: white;
+}
+.carousel-p{
+    font-weight: 500;
+    font-size: 20px;
+    color: white;
+}
+ .carousel-caption{
+    margin-bottom: 80px;
+    padding: 10px;
+} 
