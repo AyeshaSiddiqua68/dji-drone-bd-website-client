@@ -1,23 +1,65 @@
-import logo from './logo.svg';
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
+import Header from './components/Header';
+import Home from './pages/Home/Home';
+import About from './pages/About/About';
+import Contact from './pages/Contact/Contact';
+import Drones from './pages/Drones/Drones';
+import Cart from './pages/Cart/Cart';
+import Login from './pages/Login/Login';
+import SignUp from './pages/SignUp/SignUp';
+import PageNotFound from './pages/PageNotFound/PageNotFound';
+import AuthProvider from './contexts/AuthProvider';
+import Footer from './components/Footer/Footer';
+import PasswordReset from './pages/PasswordReset/PasswordReset';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <AuthProvider>
+     <Router>
+     <Header/>
+     <Switch>
+       <Route exact path="/">
+         <Home/>
+       </Route>
+       <Route path="/home">
+         <Home/>
+       </Route>
+       <Route path="/about">
+         <About/>
+       </Route>
+       <Route path="/contact">
+         <Contact/>
+       </Route>
+       <Route path="/drones">
+         <Drones/>
+       </Route>
+       <Route path="/cart">
+         <Cart/>
+       </Route>
+       <Route path="/login">
+         <Login/>
+       </Route>
+       <Route path="/signup">
+         <SignUp/>
+       </Route>
+       <Route path="/reset">
+         <PasswordReset/>
+       </Route>
+       <Route path="*">
+         <PageNotFound/>
+       </Route>
+     </Switch>
+     <Footer></Footer>
+     </Router>
+     </AuthProvider>
     </div>
   );
 }

@@ -1,0 +1,28 @@
+.menuStyle:hover {
+    color: #ff136f !important;
+    border-bottom: 2px solid #ff136f !important;
+  }
+  .social-link a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    margin: 0 6px;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    border: 1px solid beige;
+    background-color: white;
+  }
+  .social-link a .social-icon {
+    font-size: 22px;
+    transform: translateX(25%);
+  }
+  .youtube {
+    transform: translateX(15%) !important;
+    color: #ff0000;
+  }
+  .linkedin {
+    transform: translateX(17%) !important;
+    color: #0e76a8;
+  }
