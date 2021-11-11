@@ -9,7 +9,8 @@ import google from '../../assets/images/google.png'
 import github from '../../assets/images/github.png'
 
 const Login = () => {
-  const { signInWithGoogle, signInWithGithub, signInWithFacebook, signInWithEmail, error, getEmail, getPassword } = useAuth();
+  const {AllContexts}=useAuth();
+  const { signInWithGoogle, signInWithGithub, signInWithFacebook, signInWithEmail, error, getEmail, getPassword } = AllContexts;
   return (
 
     <div className="text-center my-4">

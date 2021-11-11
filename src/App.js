@@ -18,6 +18,7 @@ import PageNotFound from './pages/PageNotFound/PageNotFound';
 import AuthProvider from './contexts/AuthProvider';
 import Footer from './components/Footer/Footer';
 import PasswordReset from './pages/PasswordReset/PasswordReset';
+import Details from './pages/Details/Details';
 
 function App() {
   return (
@@ -38,9 +39,13 @@ function App() {
        <Route path="/contact">
          <Contact/>
        </Route>
-       <Route path="/drones">
+       <Route exact path="/drones">
          <Drones/>
        </Route>
+       <Route path="/drones/:key">
+         <Details/>
+       </Route>
+       
        <Route path="/cart">
          <Cart/>
        </Route>

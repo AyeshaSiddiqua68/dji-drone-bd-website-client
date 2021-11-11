@@ -7,7 +7,8 @@ import { faEnvelope, faLock, faUser, faLink } from '@fortawesome/free-solid-svg-
 
 
 const SignUp = () => {
-    const { error, getEmail, getPassword,signUp,getName,getPhoto } = useAuth();
+  const{AllContexts}=useAuth();
+    const { error, getEmail, getPassword,signUp,getName,getPhoto } = AllContexts;
     return (
         <div className="text-center my-4">
       <h2>Please Sign Up</h2>

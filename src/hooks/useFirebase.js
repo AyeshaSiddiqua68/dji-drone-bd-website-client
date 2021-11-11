@@ -1,6 +1,8 @@
 import firebaseInitialization from "../firebase/firebase.init";
-import { getAuth, signInWithPopup, GoogleAuthProvider, onAuthStateChanged, signOut, GithubAuthProvider, FacebookAuthProvider, createUserWithEmailAndPassword,
-    updateProfile,sendEmailVerification,sendPasswordResetEmail } from "firebase/auth";
+import {
+    getAuth, signInWithPopup, GoogleAuthProvider, onAuthStateChanged, signOut, GithubAuthProvider, FacebookAuthProvider, createUserWithEmailAndPassword,
+    updateProfile, sendEmailVerification, sendPasswordResetEmail
+} from "firebase/auth";
 import { useEffect, useState } from "react";
 
 firebaseInitialization()
@@ -21,6 +23,13 @@ const useFirebase = () => {
     const [password, setPassword] = useState('');
     const [name, setName] = useState('');
     const [photo, setPhoto] = useState('');
+
+    //clear error state
+    useEffect(() => {
+        setTimeout(() => {
+            setError("")
+        }, 5000)
+    }, [error]);
 
     //google sign in
     function signInWithGoogle() {
@@ -64,15 +73,15 @@ const useFirebase = () => {
     }
 
     //update user profile by setting name & image url
-    function setNameAndImage(){
+    function setNameAndImage() {
         updateProfile(auth.currentUser, {
             displayName: name, photoURL: photo
-          }).then(() => {
-            
-          }).catch((error) => {
+        }).then(() => {
+
+        }).catch((error) => {
             setError(error.message);
-          });
-          
+        });
+
     }
     //Get the currently signed-in user
     useEffect(() => {
@@ -125,22 +134,22 @@ const useFirebase = () => {
     }
 
     //email verification
-    function emailVerify(){
+    function emailVerify() {
         sendEmailVerification(auth.currentUser)
-        .then(() => {
-          alert(`A verification mail has been sent to ${email}`)
-        });
+            .then(() => {
+                alert(`A verification mail has been sent to ${email}`)
+            });
     }
     //reset password by sending email
-    function passwordReset(e){
-   e.preventDefault();
-   sendPasswordResetEmail(auth, email)
-  .then(() => {
-  alert("Password reset email has been sent")  
-  })
-  .catch((err) => {
-    setError(err.meassage);
-  });
+    function passwordReset(e) {
+        e.preventDefault();
+        sendPasswordResetEmail(auth, email)
+            .then(() => {
+                alert("Password reset email has been sent")
+            })
+            .catch((err) => {
+                setError(err.meassage);
+            });
     }
 
 

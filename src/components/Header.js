@@ -5,7 +5,8 @@ import useAuth from '../hooks/useAuth';
 import logo from '../assets/images/footer.svg'
 
 const Header = () => {
-    const { user, logOut } = useAuth();
+    const { AllContexts } = useAuth();
+    const{user, logOut}=AllContexts;
     const{displayName, photoURL, email}=user;
     return (
         <div className="sticky-top">
@@ -19,6 +20,7 @@ const Header = () => {
                             <Nav.Link as={NavLink} to="/home">Home</Nav.Link>
                             <Nav.Link as={NavLink} to="/about">About</Nav.Link>
                             <Nav.Link as={NavLink} to="/contact">Contact</Nav.Link>
+                            <Nav.Link as={NavLink} to="/drones">Drones</Nav.Link>
                             {!displayName ?  (<>
                                 <Nav.Link as={NavLink} to="/signup">SignUp</Nav.Link>
                                 <Nav.Link as={NavLink} to="/login">Login</Nav.Link></>) :(
