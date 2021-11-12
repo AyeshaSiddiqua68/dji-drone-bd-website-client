@@ -7,7 +7,7 @@ import Zoom from "react-reveal/Zoom";
 const HomeComponent = () => {
     const{drones}=useAuth();
     return (
-        <div className="my-5">
+        <div id="popular" className="my-5">
             <Container>
             <Zoom right cascade>
           <h2 className="text-center  mb-0"> Popular Drones</h2>

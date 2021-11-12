@@ -9,10 +9,11 @@ export const AuthContext = createContext();
 const AuthProvider = ({ children }) => {
     const AllContexts = useFirebase();
     const{drones}=useDrones();
-    const{addToCart,foundedDrone}=useCart();
+
+    const{addToCart,foundedDrone, removeItem,setFoundedDrone}=useCart();
 
     const data={
-        AllContexts, drones, addToCart,foundedDrone
+        AllContexts, drones, addToCart,foundedDrone,removeItem,setFoundedDrone
     }
     return (
         <AuthContext.Provider value={data}>
