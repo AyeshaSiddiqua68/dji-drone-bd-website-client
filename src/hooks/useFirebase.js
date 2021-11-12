@@ -33,43 +33,23 @@ const useFirebase = () => {
 
     //google sign in
     function signInWithGoogle() {
-        signInWithPopup(auth, googleProvider)
-            .then((res) => {
-                setUser(res.user);
-            }).catch(err => {
-                setError(err.message)
-            })
+        return signInWithPopup(auth, googleProvider);
     }
 
     //github sign in
     function signInWithGithub() {
-        signInWithPopup(auth, githubProvider)
-            .then((res) => {
-                setUser(res.user);
-            }).catch(err => {
-                setError(err.message)
-            })
+        return signInWithPopup(auth, githubProvider)
     }
 
     //facebook sign in
     function signInWithFacebook() {
-        signInWithPopup(auth, facebookProvider)
-            .then((res) => {
-                setUser(res.user);
-            }).catch(err => {
-                setError(err.message)
-            })
+        return signInWithPopup(auth, facebookProvider)
     }
 
     //email password sign in
     function signInWithEmail(e) {
         e.preventDefault();
-        signInWithEmail(auth, email, password)
-            .then((res) => {
-                setUser(res.user);
-            }).catch(err => {
-                setError(err.message)
-            })
+        return signInWithEmail(auth, email, password)
     }
 
     //update user profile by setting name & image url
@@ -159,7 +139,9 @@ const useFirebase = () => {
         signInWithFacebook,
         signInWithEmailAndPassword: signInWithEmail,
         user,
+        setUser,
         error,
+        setError,
         logOut,
         getPassword,
         getEmail,

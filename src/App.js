@@ -19,6 +19,7 @@ import AuthProvider from './contexts/AuthProvider';
 import Footer from './components/Footer/Footer';
 import PasswordReset from './pages/PasswordReset/PasswordReset';
 import Details from './pages/Details/Details';
+import PrivateRoute from './PrivateRoute/PrivateRoute';
 
 function App() {
   return (
@@ -46,9 +47,9 @@ function App() {
          <Details/>
        </Route>
        
-       <Route path="/cart">
+       <PrivateRoute path="/cart">
          <Cart/>
-       </Route>
+       </PrivateRoute>
        <Route path="/login">
          <Login/>
        </Route>

@@ -5,10 +5,10 @@
       "title": "The Creative React and Redux Course",
       "desc": "Build 3 Awesome Web Applications With React!",
       "price": 29.99,
-      "provider": "Hasan",
+      "provider": "Ayesha Siddiqua",
       "rating": 5,
       "ratingCount": "320",
-      "sellerThumb": "https://hasan-images.netlify.app/hasan.png"
+      "sellerThumb": "https://avatars.githubusercontent.com/u/86625494?s=32"
     },
     {
       "key": 2,
@@ -16,10 +16,10 @@
       "title": "The Creative Javascript Full Premium Course",
       "desc": "From Beginner Javascript To Building Awesome Web Apps and Websites!",
       "price": 34.79,
-      "provider": "Hasan",
+      "provider": "Ayesha Siddiqua",
       "rating": 4.2,
       "ratingCount": "450",
-      "sellerThumb": "https://hasan-images.netlify.app/hasan.png"
+      "sellerThumb": "https://avatars.githubusercontent.com/u/86625494?s=32"
     },
     {
       "key": 3,
@@ -27,10 +27,10 @@
       "title": "The Creative HTML5 & CSS3 Course",
       "desc": "Create 3 amazing, well designed and animated websites from scratch!",
       "price": 18.9,
-      "provider": "Hasan",
+      "provider": "Ayesha Siddiqua",
       "rating": 4,
       "ratingCount": "680",
-      "sellerThumb": "https://hasan-images.netlify.app/hasan.png"
+      "sellerThumb": "https://avatars.githubusercontent.com/u/86625494?s=32"
     },
     {
       "key": 4,
@@ -38,10 +38,10 @@
       "title": "The Creative React and Redux Course",
       "desc": "Build 3 Awesome Web Applications With React!",
       "price": 48.69,
-      "provider": "Hasan",
+      "provider": "Ayesha Siddiqua",
       "rating": 3.5,
       "ratingCount": "350",
-      "sellerThumb": "https://hasan-images.netlify.app/hasan.png"
+      "sellerThumb": "https://avatars.githubusercontent.com/u/86625494?s=32"
     },
     {
       "key": 5,
@@ -49,10 +49,10 @@
       "title": "Top 14 Big Data Certifications in 2021",
       "desc": "Big Data is now growing as an opportunity rather than a problem",
       "price": 48.69,
-      "provider": "Hasan",
+      "provider": "Ayesha Siddiqua",
       "rating": 4.5,
       "ratingCount": "560",
-      "sellerThumb": "https://hasan-images.netlify.app/hasan.png"
+      "sellerThumb": "https://avatars.githubusercontent.com/u/86625494?s=32"
     },
     {
       "key": 6,
@@ -60,10 +60,10 @@
       "title": "What is Bytecode in Java and how it works?",
       "desc": "Java gets executed. One such concept is Bytecode in Java.",
       "price": 48.69,
-      "provider": "Hasan",
+      "provider": "Ayesha Siddiqua",
       "rating": 4.0,
       "ratingCount": "500",
-      "sellerThumb": "https://hasan-images.netlify.app/hasan.png"
+      "sellerThumb": "https://avatars.githubusercontent.com/u/86625494?s=32"
     },
     {
       "key": 7,
@@ -71,10 +71,10 @@
       "title": "Array Of Objects In Java: Everything You Need To Know",
       "desc": "Java is a programming language that deals in objects. ",
       "price": 42.29,
-      "provider": "Hasan",
+      "provider": "Ayesha Siddiqua",
       "rating": 3.5,
       "ratingCount": "500",
-      "sellerThumb": "https://hasan-images.netlify.app/hasan.png"
+      "sellerThumb": "https://avatars.githubusercontent.com/u/86625494?s=32"
     },
     {
       "key": 8,
@@ -82,10 +82,10 @@
       "title": "Top 100+ Python Interview Questions",
       "desc": "python gets executed. One such concept is Bytecode in Java.",
       "price": 47.69,
-      "provider": "Hasan",
+      "provider": "Ayesha Siddiqua",
       "rating": 4.5,
       "ratingCount": "500",
-      "sellerThumb": "https://hasan-images.netlify.app/hasan.png"
+      "sellerThumb": "https://avatars.githubusercontent.com/u/86625494?s=32"
     },
     {
       "key": 9,
@@ -93,9 +93,9 @@
       "title": "Full Stack Web Development Internship Program",
       "desc": "Build a complete web product & Earn an Coding Club Internship Certification. It will help you to get a job.",
       "price": 48.69,
-      "provider": "Hasan",
+      "provider": "Ayesha Siddiqua",
       "rating": 4.0,
       "ratingCount": "500",
-      "sellerThumb": "https://hasan-images.netlify.app/hasan.png"
+      "sellerThumb": "https://avatars.githubusercontent.com/u/86625494?s=32"
     }
   ]

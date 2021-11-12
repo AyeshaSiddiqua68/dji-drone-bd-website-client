@@ -2,16 +2,18 @@ import React from 'react';
 import { Card, Button, Col, Row } from 'react-bootstrap';
 import Zoom from "react-reveal/Zoom";
 import Rating from "react-rating";
-import { library } from "@fortawesome/fontawesome-svg-core";
 import { faStar as fullStar } from "@fortawesome/free-solid-svg-icons";
 import { faStar as emptyStar } from "@fortawesome/free-regular-svg-icons";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { NavLink } from 'react-router-dom';
+import useAuth from '../../hooks/useAuth';
 
 
 const Drone = ({ drone }) => {
     const { img, title, desc, price, rating, ratingCount,key } = drone;
+
+    const {addToCart}=useAuth();
     return (
 
         <Col className="my-3" md={4}>
@@ -48,7 +50,7 @@ const Drone = ({ drone }) => {
                             <NavLink to={`/drones/${key}`}className="w-50 btn btn-primary">
                                 View Details
                             </NavLink>
-                            <Button
+                            <Button onClick={()=>{addToCart(drone)}}
 
                                 className="w-50 ms-1"
                                 variant="primary"

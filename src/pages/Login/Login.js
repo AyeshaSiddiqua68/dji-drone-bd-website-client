@@ -1,6 +1,6 @@
 import React from 'react';
 import { Col, Form, FormControl, InputGroup, Row } from 'react-bootstrap';
-import { NavLink } from 'react-router-dom';
+import { useHistory, useLocation, NavLink } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEnvelope, faLock } from '@fortawesome/free-solid-svg-icons'
@@ -9,8 +9,12 @@ import google from '../../assets/images/google.png'
 import github from '../../assets/images/github.png'
 
 const Login = () => {
-  const {AllContexts}=useAuth();
-  const { signInWithGoogle, signInWithGithub, signInWithFacebook, signInWithEmail, error, getEmail, getPassword } = AllContexts;
+  const location = useLocation();
+  const redirect = location?.state?.from || "/home";
+  const history = useHistory();
+
+  const { AllContexts } = useAuth();
+  const { setError, setUser, signInWithGoogle, signInWithGithub, signInWithFacebook, signInWithEmail, error, getEmail, getPassword } = AllContexts;
   return (
 
     <div className="text-center my-4">
@@ -18,7 +22,16 @@ const Login = () => {
       <p className=" mt-2">Login with Email & Password</p>
       <p className="text-danger text-center">{error}</p>
       <div className="w-25 mx-auto">
-        <Form onSubmit={signInWithEmail}>
+        <Form onSubmit={()=>{
+          signInWithEmail()
+          .then((result) => {
+            setUser(result.user);
+            history.push(redirect);
+          })
+          .catch((err) => {
+            setError(err.message);
+          });
+        }}>
           <Row>
             <Col className="text-start">
               <Form.Label htmlFor="email" visuallyHidden>
@@ -76,15 +89,40 @@ const Login = () => {
       <p> Login with</p>
       <div>
         <button
-          onClick= { signInWithGoogle }
+          onClick={() => {
+            signInWithGoogle()
+            .then((result) => {
+              setUser(result.user);
+              history.push(redirect);
+            })
+            .catch((err) => {
+              setError(err.message);
+            });
+          }}
           className="btn"
         >
           <img src={google} width="46px" alt="google-icon" />
         </button>
-        <button onClick={signInWithFacebook} className="btn">
+        <button onClick={() => {
+          signInWithFacebook()
+          .then((result) => {
+            setUser(result.user);
+            history.push(redirect);
+          })
+          .catch((err) => {
+            setError(err.message);
+          });
+        }} className="btn">
           <img width="50px" src={facebook} alt="facebook-icon" />
         </button>
-        <button onClick={signInWithGithub} className="btn">
+        <button onClick={()=>{signInWithGithub()
+        .then((result) => {
+          setUser(result.user);
+          history.push(redirect);
+        })
+        .catch((err) => {
+          setError(err.message);
+        });}} className="btn">
           <img
             width="55px"
             src={github}
