@@ -11,7 +11,7 @@ import useAuth from '../../hooks/useAuth';
 
 
 const Drone = ({ drone }) => {
-    const { img, title, desc, price, rating, ratingCount,key } = drone;
+    const { img, title, desc, price, rating, ratingCount,_id } = drone;
 
     const {addToCart}=useAuth();
     return (
@@ -47,7 +47,7 @@ const Drone = ({ drone }) => {
 
 
                         <div className="d-flex">
-                            <NavLink to={`/drones/${key}`}className="w-50 btn btn-primary">
+                            <NavLink to={`/drones/${_id}`}className="w-50 btn btn-primary">
                                 View Details
                             </NavLink>
                             <Button onClick={()=>{addToCart(drone)}}

@@ -4,7 +4,6 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
 } from "react-router-dom";
 import Header from './components/Header';
 import Home from './pages/Home/Home';
@@ -43,7 +42,7 @@ function App() {
        <Route exact path="/drones">
          <Drones/>
        </Route>
-       <Route path="/drones/:key">
+       <Route path="/drones/:id">
          <Details/>
        </Route>
        
