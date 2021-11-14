@@ -10,7 +10,6 @@ import Home from './pages/Home/Home';
 import About from './pages/About/About';
 import Contact from './pages/Contact/Contact';
 import Drones from './pages/Drones/Drones';
-import Cart from './pages/Cart/Cart';
 import Login from './pages/Login/Login';
 import SignUp from './pages/SignUp/SignUp';
 import PageNotFound from './pages/PageNotFound/PageNotFound';
@@ -19,6 +18,7 @@ import Footer from './components/Footer/Footer';
 import PasswordReset from './pages/PasswordReset/PasswordReset';
 import Details from './pages/Details/Details';
 import PrivateRoute from './PrivateRoute/PrivateRoute';
+import DashBoard from './pages/DashBoard/DashBoard';
 
 function App() {
   return (
@@ -46,8 +46,8 @@ function App() {
          <Details/>
        </Route>
        
-       <PrivateRoute path="/cart">
-         <Cart/>
+       <PrivateRoute path="/dashboard">
+         <DashBoard/>
        </PrivateRoute>
        <Route path="/login">
          <Login/>

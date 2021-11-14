@@ -1,4 +1,5 @@
 import React from 'react';
+import {useHistory} from 'react-router-dom';
 import { Card, Button, Col, Row } from 'react-bootstrap';
 import Zoom from "react-reveal/Zoom";
 import Rating from "react-rating";
@@ -11,9 +12,12 @@ import useAuth from '../../hooks/useAuth';
 
 
 const Drone = ({ drone }) => {
-    const { img, title, desc, price, rating, ratingCount,_id } = drone;
+    const history =useHistory();
+    const { img, title, desc, price, rating, ratingCount, _id } = drone;
 
-    const {addToCart}=useAuth();
+    const { addToCart, AllContexts } = useAuth();
+    const { user } = AllContexts;
+    const { uid } = user;
     return (
 
         <Col className="my-3" md={4}>
@@ -47,10 +51,17 @@ const Drone = ({ drone }) => {
 
 
                         <div className="d-flex">
-                            <NavLink to={`/drones/${_id}`}className="w-50 btn btn-primary">
+                            <NavLink to={`/drones/${_id}`} className="w-50 btn btn-primary">
                                 View Details
                             </NavLink>
-                            <Button onClick={()=>{addToCart(drone)}}
+                            <Button onClick={() => {
+                                if (uid) {
+                                    addToCart(drone)
+                                }
+                                else{
+                                    history.push("/login")
+                                }
+                            }}
 
                                 className="w-50 ms-1"
                                 variant="primary"

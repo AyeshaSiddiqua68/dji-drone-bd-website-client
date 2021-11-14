@@ -1,42 +1,63 @@
 import { useEffect, useState } from "react";
+import useFirebase from "./useFirebase";
 
 const useCart = () => {
+  const { user } = useFirebase();
+  const { uid } = user;
   const [foundedDrone, setFoundedDrone] = useState([]);
 
   useEffect(() => {
-    const cart = haveCart();
-    setFoundedDrone(cart);
-  }, []);
+    fetch(`https://secret-stream-74331.herokuapp.com/cart/${uid}`)
+      .then(res => res.json())
+      .then(data => {
+        if (data.length) {
+          setFoundedDrone(data);
+        }
+      })
 
-  function haveCart() {
-    let cart;
-    const isHave = localStorage.getItem("cart");
-    if (isHave) {
-      cart = JSON.parse(isHave);
-    }
-    else {
-      cart = [];
-    }
-    return cart;
-  }
+  }, [uid]);
+
 
   function addToCart(drone) {
-    const isExist = foundedDrone.find(selected => selected.key === drone.key);
+    const isExist = foundedDrone.find((selected) => selected._id === drone._id);
+
+    delete drone._id;
+    drone.uid = uid;
+    drone.status = "pending";
+
     if (isExist) {
       alert("Already Added")
     }
     else {
-      const newSelected = [...foundedDrone, drone];
-      localStorage.setItem('cart', JSON.stringify(newSelected));
-      setFoundedDrone(newSelected)
+      fetch('https://secret-stream-74331.herokuapp.com/drone/add', {
+        method: "post",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify(drone),
+      })
+        .then(res => res.json())
+        .then(data => {
+          if (data.insertedId) {
+            const newSelected = [...foundedDrone, drone];
+            setFoundedDrone(newSelected)
+          }
+        })
     }
-
   }
 
-  function removeItem(key) {
-    const selectionAfterRemove = foundedDrone.filter(drone => drone.key !== key);
-    localStorage.setItem('cart', JSON.stringify(selectionAfterRemove));
-    setFoundedDrone(selectionAfterRemove);
+  function removeItem(id) {
+    fetch(`https://secret-stream-74331.herokuapp.com/delete/${id}`, {
+      method: "delete",
+    })
+      .then(res => res.json())
+      .then(data => {
+        if (data.deletedCount === 1) {
+          const selectionAfterRemove = foundedDrone.filter((drone) => drone._id !== id);
+          setFoundedDrone(selectionAfterRemove);
+        }
+        else {
+          alert("Something Wrong!")
+        }
+      })
   }
 
 

@@ -2,30 +2,33 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useEffect, useState } from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
 import Rating from 'react-rating';
-import { useParams } from 'react-router-dom';
+import { useParams, useHistory } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';
 import { faStar as fullStar } from "@fortawesome/free-solid-svg-icons";
 import { faStar as emptyStar } from "@fortawesome/free-regular-svg-icons";
 import { Button } from 'react-bootstrap'
 
 const Details = () => {
-    const[drone, setDrone]=useState({});
-    const { id} = useParams();
-    const {addToCart } = useAuth();
-   
-    useEffect(()=>{
-        fetch(`http://localhost:5000/drones/${id}`)
-        .then(res=>res.json())
-        .then(data=>{
-            if(data._id){
-                setDrone(data);
-            }
-            else{
-                alert("Something wrong!")
-            }
-          
-        })
-    },[])
+    const [drone, setDrone] = useState({});
+    const { id } = useParams();
+    const { addToCart, AllContexts } = useAuth();
+    const { user } = AllContexts;
+    const { uid } = user;
+    const history = useHistory();
+
+    useEffect(() => {
+        fetch(`https://secret-stream-74331.herokuapp.com/drones/${id}`)
+            .then(res => res.json())
+            .then(data => {
+                if (data?._id) {
+                    setDrone(data);
+                }
+                else {
+                    alert("Something wrong!")
+                }
+
+            })
+    }, [id]);
     // const { img, title, desc, price, rating, ratingCount, provider, sellerThumb } = selectedDrone;
 
     return (
@@ -55,7 +58,14 @@ const Details = () => {
                                         {drone.rating}
                                         <p className="mb-0">Total Review: {drone.ratingCount}</p>
                                         <Button
-                                         onClick={()=>{addToCart(drone)}}
+                                            onClick={() => {
+                                                if (uid) {
+                                                    addToCart(drone)
+                                                }
+                                                else {
+                                                    history.push("/login")
+                                                }
+                                            }}
 
                                             className="w-50 ms-1"
                                             variant="primary"
