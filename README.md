@@ -9,14 +9,14 @@ Live Site Link: https://dji-drone-bd.web.app/
 
 Technology used to build this project:
 
-JSX
-NODE.js
-React.js
-Bootstrap
-React Bootstrap
-React FontAwesome
-Firebase
-MongoDB
-React hook form
-React Rating
-And some animation packages of React
+JSX, 
+NODE.js, 
+React.js, 
+Bootstrap, 
+React Bootstrap, 
+React FontAwesome, 
+Firebase, 
+MongoDB, 
+React hook form, 
+React Rating, 
+And some animation packages of React.
