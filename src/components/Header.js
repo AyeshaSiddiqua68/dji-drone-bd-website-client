@@ -9,7 +9,7 @@ import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 const Header = () => {
     const { AllContexts, foundedDrone } = useAuth();
     const { user, logOut } = AllContexts;
-    const { displayName, photoURL, email } = user;
+    const { displayName, photoURL, email, uid } = user;
     return (
         <div className="sticky-top">
             <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
@@ -46,7 +46,10 @@ const Header = () => {
                             )}
 
 
-
+                            {
+                                uid===("aWHOgptsAGSCDQlcfuwyI6NZKMj2") &&
+                                (<Nav.Link as={NavLink} to="/admin">AdminPannel</Nav.Link>)
+                            }
                         </Nav>
                     </Navbar.Collapse>
                 </Container>

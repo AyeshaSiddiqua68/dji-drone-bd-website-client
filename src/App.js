@@ -19,6 +19,7 @@ import PasswordReset from './pages/PasswordReset/PasswordReset';
 import Details from './pages/Details/Details';
 import PrivateRoute from './PrivateRoute/PrivateRoute';
 import DashBoard from './pages/DashBoard/DashBoard';
+import AdminPannel from './pages/AdminPannel/AdminPannel';
 
 function App() {
   return (
@@ -38,6 +39,9 @@ function App() {
        </Route>
        <Route path="/contact">
          <Contact/>
+       </Route>
+       <Route path="/admin">
+         <AdminPannel/>
        </Route>
        <Route exact path="/drones">
          <Drones/>

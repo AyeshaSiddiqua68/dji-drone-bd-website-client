@@ -17,7 +17,7 @@ const Details = () => {
     const history = useHistory();
 
     useEffect(() => {
-        fetch(`https://secret-stream-74331.herokuapp.com/drones/${id}`)
+        fetch(`http://localhost:5000/drones/${id}`)
             .then(res => res.json())
             .then(data => {
                 if (data?._id) {

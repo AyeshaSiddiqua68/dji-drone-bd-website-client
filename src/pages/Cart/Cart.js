@@ -28,7 +28,7 @@ const Cart = () => {
                             <h6>Total Price: {totalCost.toFixed(2)} $</h6>
 
                             <button onClick={() => {
-                                fetch(`https://secret-stream-74331.herokuapp.com/purchase/${uid}`, {
+                                fetch(`http://localhost:5000/purchase/${uid}`, {
                                     method: "delete"
                                 })
                                     .then(res => res.json())

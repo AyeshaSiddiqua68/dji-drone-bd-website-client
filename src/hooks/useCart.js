@@ -3,11 +3,11 @@ import useFirebase from "./useFirebase";
 
 const useCart = () => {
   const { user } = useFirebase();
-  const { uid } = user;
+  const { uid, displayName, email, photoURL } = user;
   const [foundedDrone, setFoundedDrone] = useState([]);
 
   useEffect(() => {
-    fetch(`https://secret-stream-74331.herokuapp.com/cart/${uid}`)
+    fetch(`http://localhost:5000/cart/${uid}`)
       .then(res => res.json())
       .then(data => {
         if (data.length) {
@@ -23,13 +23,16 @@ const useCart = () => {
 
     delete drone._id;
     drone.uid = uid;
+    drone.name=displayName;
+    drone.email=email;
+    drone.photo=photoURL
     drone.status = "pending";
 
     if (isExist) {
       alert("Already Added")
     }
     else {
-      fetch('https://secret-stream-74331.herokuapp.com/drone/add', {
+      fetch('http://localhost:5000/drone/add', {
         method: "post",
         headers: { "content-type": "application/json" },
         body: JSON.stringify(drone),
@@ -45,7 +48,7 @@ const useCart = () => {
   }
 
   function removeItem(id) {
-    fetch(`https://secret-stream-74331.herokuapp.com/delete/${id}`, {
+    fetch(`http://localhost:5000/delete/${id}`, {
       method: "delete",
     })
       .then(res => res.json())
