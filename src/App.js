@@ -20,6 +20,7 @@ import Details from './pages/Details/Details';
 import PrivateRoute from './PrivateRoute/PrivateRoute';
 import DashBoard from './pages/DashBoard/DashBoard';
 import AdminPannel from './pages/AdminPannel/AdminPannel';
+import Reviews from './components/Reviews';
 
 function App() {
   return (
@@ -49,7 +50,9 @@ function App() {
        <Route path="/drones/:id">
          <Details/>
        </Route>
-       
+       <Route path="review">
+         <Reviews></Reviews>
+       </Route>
        <PrivateRoute path="/dashboard">
          <DashBoard/>
        </PrivateRoute>
