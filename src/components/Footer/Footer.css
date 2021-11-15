@@ -1,6 +1,6 @@
 .menuStyle:hover {
-    color: #ff136f !important;
-    border-bottom: 2px solid #ff136f !important;
+    color: darkred!important;
+    border-bottom: 2px solid darkred!important;
   }
   .social-link a {
     display: flex;

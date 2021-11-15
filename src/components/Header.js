@@ -1,10 +1,9 @@
 import React from 'react';
-import { Badge, Container, Nav, Navbar, NavDropdown } from 'react-bootstrap';
+import { Container, Nav, Navbar, NavDropdown } from 'react-bootstrap';
 import { Link, NavLink } from 'react-router-dom';
 import useAuth from '../hooks/useAuth';
 import logo from '../assets/images/footer.svg'
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
+
 
 const Header = () => {
     const { AllContexts, foundedDrone } = useAuth();
@@ -20,12 +19,11 @@ const Header = () => {
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="ms-auto align-items-center">
                             <Nav.Link as={NavLink} to="/home">Home</Nav.Link>
-                            <Nav.Link as={NavLink} to="/about">About</Nav.Link>
                             <Nav.Link as={NavLink} to="/contact">Contact</Nav.Link>
-                            <Nav.Link as={NavLink} to="/drones">Drones</Nav.Link>
+                            <Nav.Link as={NavLink} to="/drones">Products</Nav.Link>
 
                             {!displayName ? (<>
-                                <Nav.Link as={NavLink} to="/signup">SignUp</Nav.Link>
+                                {/* <Nav.Link as={NavLink} to="/signup">SignUp</Nav.Link> */}
                                 <Nav.Link as={NavLink} to="/login">Login</Nav.Link></>) : (
 
                                 <>
@@ -47,7 +45,7 @@ const Header = () => {
 
 
                             {
-                                uid===("aWHOgptsAGSCDQlcfuwyI6NZKMj2") &&
+                                uid === ("aWHOgptsAGSCDQlcfuwyI6NZKMj2") &&
                                 (<Nav.Link as={NavLink} to="/admin">AdminPannel</Nav.Link>)
                             }
                         </Nav>

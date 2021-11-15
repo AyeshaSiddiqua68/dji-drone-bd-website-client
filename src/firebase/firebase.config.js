@@ -1,10 +1,10 @@
 const firebaseConfig = {
-    apiKey: "AIzaSyA9p99JQhdtuFZFe48-CABjSgYexQGHL4M",
-    authDomain: "dji-drone-bd.firebaseapp.com",
-    projectId: "dji-drone-bd",
-    storageBucket: "dji-drone-bd.appspot.com",
-    messagingSenderId: "560714475897",
-    appId: "1:560714475897:web:391ebaeeae84f90e7ae7a8"
+    apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
+    authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
+    projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
+    storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
+    messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID,
+    appId: process.env.REACT_APP_FIREBASE_APP_ID
   };
 
   export default firebaseConfig;

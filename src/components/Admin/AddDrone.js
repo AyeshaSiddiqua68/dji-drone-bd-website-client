@@ -1,19 +1,19 @@
 import React from 'react';
 import Swal from "sweetalert2";
 import {
-    Button,
-    Col,
-    Form,
-    FormControl,
-    InputGroup,
-    Row,
-  } from "react-bootstrap";
-  import { useForm } from "react-hook-form";
-  import { useHistory } from "react-router-dom";
-  import './../../assets/css/AddDrone.css'
+  Button,
+  Col,
+  Form,
+  FormControl,
+  InputGroup,
+  Row,
+} from "react-bootstrap";
+import { useForm } from "react-hook-form";
+import { useHistory } from "react-router-dom";
+import './../../assets/css/AddDrone.css'
 
 const AddDrone = () => {
-    const history = useHistory();
+  const history = useHistory();
   const { register, handleSubmit, reset } = useForm();
   const onSubmit = async (data) => {
     data.rating = 0;
@@ -53,8 +53,8 @@ const AddDrone = () => {
     reset();
   };
 
-    return (
-        <>
+  return (
+    <>
       <section className="add-product">
         <h3 className="text-center mb-3 fw-bold">Add a brand new product!</h3>
         <Form onSubmit={handleSubmit(onSubmit)}>
@@ -127,7 +127,7 @@ const AddDrone = () => {
         </Form>
       </section>
     </>
-    );
+  );
 };
 
 export default AddDrone;

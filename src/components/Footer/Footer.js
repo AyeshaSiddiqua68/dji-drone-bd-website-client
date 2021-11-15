@@ -39,8 +39,8 @@ const Footer = () => {
   return (
     <div
       style={{
-         padding: "40px 0 0",
-         backgroundColor:"black"
+        padding: "40px 0 0",
+        backgroundColor: "black"
       }}
     >
       <Container>
@@ -90,7 +90,7 @@ const Footer = () => {
 
               <li>
                 <NavLink className="menuStyle" style={navStyle} to="/drones">
-                  Drones
+                  Products
                 </NavLink>
               </li>
 
@@ -163,7 +163,7 @@ const Footer = () => {
         >
           Ayesha Siddiqua -    DJI Drone BD
         </a>{" "}
-         2021
+        2021
       </p>
     </div>
   );

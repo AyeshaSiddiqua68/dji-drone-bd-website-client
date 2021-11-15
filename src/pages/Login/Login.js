@@ -22,15 +22,15 @@ const Login = () => {
       <p className=" mt-2">Login with Email & Password</p>
       <p className="text-danger text-center">{error}</p>
       <div className="w-25 mx-auto">
-        <Form onSubmit={()=>{
+        <Form onSubmit={() => {
           signInWithEmail()
-          .then((result) => {
-            setUser(result.user);
-            history.push(redirect);
-          })
-          .catch((err) => {
-            setError(err.message);
-          });
+            .then((result) => {
+              setUser(result.user);
+              history.push(redirect);
+            })
+            .catch((err) => {
+              setError(err.message);
+            });
         }}>
           <Row>
             <Col className="text-start">
@@ -91,13 +91,13 @@ const Login = () => {
         <button
           onClick={() => {
             signInWithGoogle()
-            .then((result) => {
-              setUser(result.user);
-              history.push(redirect);
-            })
-            .catch((err) => {
-              setError(err.message);
-            });
+              .then((result) => {
+                setUser(result.user);
+                history.push(redirect);
+              })
+              .catch((err) => {
+                setError(err.message);
+              });
           }}
           className="btn"
         >
@@ -105,6 +105,18 @@ const Login = () => {
         </button>
         <button onClick={() => {
           signInWithFacebook()
+            .then((result) => {
+              setUser(result.user);
+              history.push(redirect);
+            })
+            .catch((err) => {
+              setError(err.message);
+            });
+        }} className="btn">
+          <img width="50px" src={facebook} alt="facebook-icon" />
+        </button>
+        <button onClick={() => {
+          signInWithGithub()
           .then((result) => {
             setUser(result.user);
             history.push(redirect);
@@ -113,16 +125,6 @@ const Login = () => {
             setError(err.message);
           });
         }} className="btn">
-          <img width="50px" src={facebook} alt="facebook-icon" />
-        </button>
-        <button onClick={()=>{signInWithGithub()
-        .then((result) => {
-          setUser(result.user);
-          history.push(redirect);
-        })
-        .catch((err) => {
-          setError(err.message);
-        });}} className="btn">
           <img
             width="55px"
             src={github}

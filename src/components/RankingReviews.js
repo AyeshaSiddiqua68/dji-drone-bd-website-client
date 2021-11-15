@@ -8,7 +8,7 @@ import RankingReview from "./RankingReview.js";
 import '../assets/css/RankingReviews.css'
 
 const RankingReviews = () => {
-    SwiperCore.use([Pagination, Autoplay]);
+  SwiperCore.use([Pagination, Autoplay]);
   const [loading, setLoading] = useState(true);
   const [Reviews, setReviews] = useState([]);
   useEffect(() => {
@@ -20,8 +20,8 @@ const RankingReviews = () => {
       })
       .catch((error) => toast.error(error.message));
   }, []);
-    return (
-        <section
+  return (
+    <section
       id="reviews"
       style={{ overflow: "hidden" }}
       className="testimonials p-md-3"
@@ -74,7 +74,7 @@ const RankingReviews = () => {
         </div>
       </Fade>
     </section>
-    );
+  );
 };
 
 export default RankingReviews;

@@ -3,7 +3,6 @@ import { Spinner } from 'react-bootstrap';
 import { Route, Redirect } from 'react-router-dom';
 import useAuth from '../hooks/useAuth';
 
-
 function PrivateRoute({ children, ...rest }) {
     const { AllContexts } = useAuth();
     const { user, loading } = AllContexts;

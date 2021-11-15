@@ -23,9 +23,9 @@ const useCart = () => {
 
     delete drone._id;
     drone.uid = uid;
-    drone.name=displayName;
-    drone.email=email;
-    drone.photo=photoURL
+    drone.name = displayName;
+    drone.email = email;
+    drone.photo = photoURL
     drone.status = "pending";
 
     if (isExist) {

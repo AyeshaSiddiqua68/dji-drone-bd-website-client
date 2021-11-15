@@ -3,10 +3,8 @@ import { Container, Row } from 'react-bootstrap';
 import Drone from '../../components/Drone/Drone';
 import Zoom from "react-reveal/Zoom";
 
-
 const Drones = () => {
   const { drones, totalPage, currentPage, setCurrentPage } = useAuth();
-
 
   function pageHandeler(number) {
     setCurrentPage(number);

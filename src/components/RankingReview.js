@@ -3,9 +3,9 @@ import { Card } from "react-bootstrap";
 import Rating from "react-rating";
 
 const RankingReview = (props) => {
-    const { name, address, img, description, rating } = props.ranking;
-    return (
-        <Card style={{ minHeight: "375px" }} className="my-4">
+  const { name, address, img, description, rating } = props.ranking;
+  return (
+    <Card style={{ minHeight: "375px" }} className="my-4">
       <Card.Img variant="top" src={img} width="60" />
       <Card.Body className="text-center">
         <h5>
@@ -13,7 +13,7 @@ const RankingReview = (props) => {
           <span>{address}</span>
         </h5>
         <h6>
-          Raging:
+          Rating:
           <Rating
             className="text-warning"
             emptySymbol="far fa-star"
@@ -23,10 +23,10 @@ const RankingReview = (props) => {
           />{" "}
           {rating}
         </h6>
-        <Card.Text>{description?.slice(0, 140)}</Card.Text>
+        <Card.Text>{description?.slice(0, 150)}</Card.Text>
       </Card.Body>
     </Card>
-    );
+  );
 };
 
 export default RankingReview;

@@ -1,11 +1,11 @@
 import React from 'react';
-import { Form,Button } from 'react-bootstrap';
+import { Form, Button } from 'react-bootstrap';
 import useAuth from '../../hooks/useAuth';
 
 
 const PasswordReset = () => {
-    const{AllContexts}=useAuth();
-    const{getEmail,passwordReset,error}=AllContexts;
+    const { AllContexts } = useAuth();
+    const { getEmail, passwordReset, error } = AllContexts;
     return (
         <div className="text-center my-5 w-50 mx-auto">
             <Form onSubmit={passwordReset}>

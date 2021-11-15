@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router';
 import AddDrone from '../../components/Admin/AddDrone';
-import DronesComponent from '../../components/Admin/DronesComponent';
 import Orders from '../../components/Admin/Orders';
 import Overview from '../../components/Admin/Overview';
+import MakeAdmin from '../../components/MakeAdmin';
 import useAuth from '../../hooks/useAuth';
 
 const AdminPannel = () => {
@@ -26,9 +26,9 @@ const AdminPannel = () => {
 
                                <li className="w-100 mb-2"><input onClick={()=>setActive("Orders")} className={active==="Orders"? " bg-primary text-white w-100 d-block": "bg-white w-100 d-block"} type="button" value="Orders"></input></li>
 
-                               <li className="w-100 mb-2"><input onClick={()=>setActive("Add New Drone")} className={active==="Add New Drone"? " bg-primary text-white w-100 d-block": "bg-white w-100 d-block"} type="button" value="Add New Drone"></input></li>
+                               <li className="w-100 mb-2"><input onClick={()=>setActive("Add New Product")} className={active==="Add New Product"? " bg-primary text-white w-100 d-block": "bg-white w-100 d-block"} type="button" value="Add New Product"></input></li>
 
-                               <li className="w-100 mb-2"><input onClick={()=>setActive("Drones")} className={active==="Drones"? " bg-primary text-white w-100 d-block": "bg-white w-100 d-block"} type="button" value="Drones"></input></li>
+                               <li className="w-100 mb-2"><input onClick={()=>setActive("Make An Admin")} className={active==="Make An Admin"? " bg-primary text-white w-100 d-block": "bg-white w-100 d-block"} type="button" value="Make An Admin"></input></li>
                            </ul>
                          </div>
 
@@ -37,9 +37,9 @@ const AdminPannel = () => {
                             {
                                 (active ==="Overview" && <Overview/>) ||
                                 (active ==="Orders" && <Orders/>) ||
-                                (active ==="Add New Drone" && <AddDrone/>)
+                                (active ==="Add New Product" && <AddDrone/>)
                                 ||
-                                (active ==="Drones" && <DronesComponent/>)
+                                (active ==="Make An Admin" && <MakeAdmin/>)
                             }
                          </div>
 

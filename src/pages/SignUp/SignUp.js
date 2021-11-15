@@ -7,16 +7,16 @@ import { faEnvelope, faLock, faUser, faLink } from '@fortawesome/free-solid-svg-
 
 
 const SignUp = () => {
-  const{AllContexts}=useAuth();
-    const { error, getEmail, getPassword,signUp,getName,getPhoto } = AllContexts;
-    return (
-        <div className="text-center my-4">
+  const { AllContexts } = useAuth();
+  const { error, getEmail, getPassword, signUp, getName, getPhoto } = AllContexts;
+  return (
+    <div className="text-center my-4">
       <h2>Please Sign Up</h2>
       <p className=" mt-2">Sign Up with Email & Password</p>
       <p className="text-danger text-center">{error}</p>
       <div className="w-25 mx-auto">
         <Form onSubmit={signUp}>
-        <Row>
+          <Row>
             <Col className="text-start">
               <Form.Label htmlFor="name" visuallyHidden>
                 Your Name
@@ -26,7 +26,7 @@ const SignUp = () => {
                   <FontAwesomeIcon icon={faUser}></FontAwesomeIcon>
                 </InputGroup.Text>
                 <FormControl
-                required
+                  required
                   onBlur={getName}
                   type="text"
                   autoComplete="current-name"
@@ -46,7 +46,7 @@ const SignUp = () => {
                   <FontAwesomeIcon icon={faEnvelope}></FontAwesomeIcon>
                 </InputGroup.Text>
                 <FormControl
-                required
+                  required
                   onBlur={getEmail}
                   type="email"
                   autoComplete="current-email"
@@ -66,7 +66,7 @@ const SignUp = () => {
                   <FontAwesomeIcon icon={faLock}></FontAwesomeIcon>
                 </InputGroup.Text>
                 <FormControl
-                required
+                  required
                   onBlur={getPassword}
                   type="password"
                   autoComplete="current-password"
@@ -86,7 +86,7 @@ const SignUp = () => {
                   <FontAwesomeIcon icon={faLink}></FontAwesomeIcon>
                 </InputGroup.Text>
                 <FormControl
-                required
+                  required
                   onBlur={getPhoto}
                   type="text"
                   autoComplete="current-text"
@@ -107,10 +107,10 @@ const SignUp = () => {
           Already have an account? Please login!
         </NavLink>
       </p>
-      
-      
+
+
     </div>
-    );
+  );
 };
 
 export default SignUp;

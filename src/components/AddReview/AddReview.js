@@ -5,11 +5,14 @@ import Rating from "react-rating";
 import Swal from "sweetalert2";
 import { useHistory } from "react-router";
 import useAuth from "../../hooks/useAuth.js";
+import { faStar as fullStar } from "@fortawesome/free-solid-svg-icons";
+import { faStar as emptyStar } from "@fortawesome/free-regular-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const AddReview = () => {
-    const { AllContexts } = useAuth();
-    const { user } = AllContexts;
-    const { displayName, email, photoURL } = user;
+  const { AllContexts } = useAuth();
+  const { user } = AllContexts;
+  const { displayName, email, photoURL } = user;
   const history = useHistory();
   const [rating, setRating] = useState(5);
   const { register, handleSubmit, reset } = useForm();
@@ -35,8 +38,8 @@ const AddReview = () => {
           .then((data) => {
             if (data.insertedId) {
               reset();
-              Swal.fire("Publish on review section!", "", "success");
-              history.replace("/");
+              Swal.fire("Publish on home page  review section!", "", "success");
+              history.replace("/home");
             }
           });
       }
@@ -46,7 +49,8 @@ const AddReview = () => {
   };
   return (
     <section>
-      <h3 className="text-center text-capitalize fw-bold">Give a feedback</h3>
+      <h3 className="text-center text-capitalize fw-bold">Please
+        give a feedback</h3>
       <Form onSubmit={handleSubmit(onSubmit)} className="w-100 form-main">
         <div
           className="p-3 mx-auto  bg-white"
@@ -67,15 +71,28 @@ const AddReview = () => {
               </Form.Group>
             </Col>
             <Col md={6}>
-              <h6 className="fw-bold mt-1 mb-2">Your Rating</h6>
+              <h6 className="fw-bold mt-1 mb-2">Your Rating
+              </h6>
               <Rating
                 className="text-warning fs-3"
-                emptySymbol="far fa-star "
-                fullSymbol="fas fa-star "
+                emptySymbol={
+                  <FontAwesomeIcon
+                    className="text-warning"
+                    icon={emptyStar}
+                  />
+                }
+                fullSymbol={
+                  <FontAwesomeIcon
+                    className="text-warning"
+                    icon={fullStar}
+                  />
+                }
+
                 onChange={(rate) => setRating(rate)}
                 initialRating={rating}
                 fractions={2}
               />
+
               <h4 className="d-inline-block ms-2">{rating}</h4>
             </Col>
           </Row>
