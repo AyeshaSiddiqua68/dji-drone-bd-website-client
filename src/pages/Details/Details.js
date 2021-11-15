@@ -19,7 +19,7 @@ const Details = () => {
     const history = useHistory();
 
     useEffect(() => {
-        fetch(`http://localhost:5000/drones/${id}`)
+        fetch(`https://secret-stream-74331.herokuapp.com/drones/${id}`)
             .then(res => res.json())
             .then(data => {
                 if (data?._id) {
@@ -41,7 +41,7 @@ const Details = () => {
             confirmButtonText: "Yes",
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch("http://localhost:5000/placeorder", {
+                fetch("https://secret-stream-74331.herokuapp.com/placeorder", {
                     method: "POST",
                     headers: { "content-type": "application/json" },
                     body: JSON.stringify({ ...data, ...drone }),

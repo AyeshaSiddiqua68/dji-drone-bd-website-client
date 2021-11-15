@@ -4,7 +4,7 @@ const Orders = () => {
     const [orders, setOrders] = useState([]);
     const [reloadData, setReloadData] = useState(true);
     useEffect(() => {
-        fetch("http://localhost:5000/orders")
+        fetch("https://secret-stream-74331.herokuapp.com/orders")
             .then(res => res.json())
             .then(data => setOrders(data))
     }, [reloadData]);
@@ -13,7 +13,7 @@ const Orders = () => {
     function cancelOrder(id) {
         const orderCancelConfirmation = window.confirm("Are you sure to delete?");
         if (orderCancelConfirmation) {
-            fetch(`http://localhost:5000/delete/${id}`, {
+            fetch(`https://secret-stream-74331.herokuapp.com/delete/${id}`, {
                 method: "DELETE"
             })
                 .then(res => res.json())
@@ -34,7 +34,7 @@ const Orders = () => {
     function confirmOrder(id) {
         const orderPlaceConfirmation = window.confirm("Are you sure to purchase?");
         if (orderPlaceConfirmation) {
-            fetch(`http://localhost:5000/confirmation/${id}`, {
+            fetch(`https://secret-stream-74331.herokuapp.com/confirmation/${id}`, {
                 method: "PUT"
             })
                 .then(res => res.json())

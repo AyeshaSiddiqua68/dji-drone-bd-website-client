@@ -9,10 +9,10 @@ import RankingReviews from "./RankingReviews";
 import AddReview from "./AddReview/AddReview";
 import useAuth from "../hooks/useAuth";
 
-const Reviews = ( {
-    review: { name, description, address, img, _id },
-    setEdit,
-  }) => {
+const Reviews = ({
+  review: { name, description, address, img, _id },
+  setEdit,
+}) => {
   const handleDeleteReview = (id) => {
     swal({
       title: "Are you sure?",
@@ -24,7 +24,7 @@ const Reviews = ( {
       if (wantDelete) {
         const loading = toast.loading("Deleting...Please wait!");
         axios
-          .delete(`http://localhost:5000/deleteReview/${id}`)
+          .delete(`https://secret-stream-74331.herokuapp.com/deleteReview/${id}`)
           .then((res) => {
             toast.dismiss(loading);
             if (res.data) {

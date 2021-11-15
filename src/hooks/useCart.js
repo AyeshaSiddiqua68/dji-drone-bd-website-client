@@ -7,7 +7,7 @@ const useCart = () => {
   const [foundedDrone, setFoundedDrone] = useState([]);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/cart/${uid}`)
+    fetch(`https://secret-stream-74331.herokuapp.com/cart/${uid}`)
       .then(res => res.json())
       .then(data => {
         if (data.length) {
@@ -32,7 +32,7 @@ const useCart = () => {
       alert("Already Added")
     }
     else {
-      fetch('http://localhost:5000/drone/add', {
+      fetch('https://secret-stream-74331.herokuapp.com/drone/add', {
         method: "post",
         headers: { "content-type": "application/json" },
         body: JSON.stringify(drone),
@@ -48,7 +48,7 @@ const useCart = () => {
   }
 
   function removeItem(id) {
-    fetch(`http://localhost:5000/delete/${id}`, {
+    fetch(`https://secret-stream-74331.herokuapp.com/delete/${id}`, {
       method: "delete",
     })
       .then(res => res.json())

@@ -6,7 +6,7 @@ const useDrones = () => {
     const [currentPage, setCurrentPage] = useState(0);
     const size = 6;
     useEffect(() => {
-        fetch(`http://localhost:5000/drones?size=${size}&&page=${currentPage}`)
+        fetch(`https://secret-stream-74331.herokuapp.com/drones?size=${size}&&page=${currentPage}`)
             .then(res => res.json())
             .then(data => {
                 setDrones(data.drones);
